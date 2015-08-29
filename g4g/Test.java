@@ -8,5 +8,8 @@ public class Test {
 		BinaryTree newTree = new BinaryTree();
 		newTree.populate();
 		newTree.fullInorder();
+		if (newTree.hasPathSum(newTree.getRoot(), 15)){
+			System.out.println("true");
+		}
 	}
 }

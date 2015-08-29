@@ -14,6 +14,9 @@ public class BinaryTree {
 	public void addRoot(int val){
 		this.root = new TreeNode(val);
 	}
+	public TreeNode getRoot(){
+		return this.root;
+	}
 	public void fullInorder(){
 		inorder(root);
 	}
@@ -22,6 +25,34 @@ public class BinaryTree {
 		inorder(node.left);
 		System.out.print(node.val + " -> ");
 		inorder(node.right);
+		}
+		
+	}
+	/*
+	 Given a tree and a sum, return true if there is a path from the root
+	 down to a leaf, such that adding up all the values along the path
+	 equals the given sum.
+	 
+	 Strategy: subtract the node value from the sum when recurring down,
+	 and check to see if the sum is 0 when you run out of tree.
+	*/
+	public boolean hasPathSum(TreeNode node, int sum){
+		
+		if (node==null){
+			return (sum == 0);
+		}
+		else {
+			boolean result = false;
+			int subSum = sum-node.val;
+			if (subSum==0 && node.left==null && node.right==null){
+				return true;
+			}
+			result = result || hasPathSum(node.left, subSum);
+			if (result){
+				return true;
+			}
+			result = result || hasPathSum(node.right,subSum);
+			return result;
 		}
 		
 	}
@@ -101,17 +132,6 @@ public class BinaryTree {
 			else {
 				this.right = tn;
 			}
-		}
-		public TreeNode getLeft(){
-			return this.left;
-		}
-		
-		public TreeNode getRight(){
-			return this.right;
-		}
-		
-		public int getVal(){
-			return this.val;
 		}
 	}
 	
