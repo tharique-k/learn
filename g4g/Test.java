@@ -6,7 +6,6 @@ public class Test {
 	public static void main (String [] args){
 //		testSinglyLinkedList();
 		testBinaryTree();
-		
 	}
 	
 	public static void testSinglyLinkedList(){
