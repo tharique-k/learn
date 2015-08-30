@@ -4,7 +4,7 @@ public class Test {
 
 	
 	public static void main (String [] args){
-		testCharSinglyLinkedList();
+//		testCharSinglyLinkedList();
 //		testSinglyLinkedList();
 //		testBinaryTree();
 	}
@@ -37,6 +37,5 @@ public class Test {
 		System.out.print("The reverse is ");
 		SLinkedListChar.print(sls);
 	}
-	
 	
 }
