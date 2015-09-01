@@ -1,5 +1,7 @@
 package g4g;
 
+import java.util.Scanner;
+
 public class Test {
 
 	
@@ -7,8 +9,31 @@ public class Test {
 //		testCharSinglyLinkedList();
 //		testSinglyLinkedList();
 //		testBinaryTree();
+		testArbitLinkList();
 	}
 	
+	public static void testArbitLinkList(){
+		
+			Scanner scan = new Scanner(System.in);
+			System.out.println("How many numbers? : ");
+			int n = scan.nextInt();
+			System.out.println("enter the numbers");
+			ArbitLinkList als = new ArbitLinkList();
+			for (int i=0;i<n;i++){
+				als.addNode(scan.nextInt());
+			}
+			System.out.println("Now enter the arbit connections : ");
+			for (int i=0;i<n;i++ ){
+				int a = scan.nextInt();
+				int b = scan.nextInt();
+				als.addArbit(a,b);
+			}
+			scan.close();
+			als.print();
+			ArbitLinkList als1 = ArbitLinkList.copy(als);
+			System.out.println("The copied List is : ");
+			als1.print();
+	}
 	public static void testSinglyLinkedList(){
 		SinglyLinkedList sls = new SinglyLinkedList();
 		sls.populate();
